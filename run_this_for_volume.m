@@ -16,12 +16,6 @@ nCk1 = nchoosek(n,k-1);
 
 %% get marginal volumes from marginal sizes
 M = getmarginals(k,n-k); % returns choose(n-1,d-1)x(k+1) array
-
-
-
-
-
-
 marg = []; % linear container for marginals
 for i = 1:size(M,1)
     marg = [marg,M(i,:)]; %#ok<AGROW> 
