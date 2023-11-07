@@ -1,6 +1,7 @@
 %% edit the last line for different n,k
 %% syntax : antichain_volume(n,k)
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function op = getmarginals(k,d)
 % get the marginal changes in size of maximal antichain
 % as a result of increasing number of symbols
@@ -25,17 +26,15 @@ end
 
 end
 
-%% change the very last line for different n,k
-%% syntax: antichain_volume(n,k)
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function op = antichain_volume(n,k)
 % get the volumes of antichains from the k and k-1 level of n
 % each m-set contributes m to the volume
 % nargin = 0;
 %% defaults
 if nargin == 0
-    n = 5;
-    k = 3;
+    n = 12;
+    k = 7;
 end
 
 nCk0 = nchoosek(n,k);
@@ -58,15 +57,14 @@ for i = 1:length(marg)
 end
 
 %% plot
-plot(0:(length(marg)),vol), hold off
+plt = plot(0:(length(marg)),vol);
 titl = strjoin({...
     'antichain volume for n = ',num2str(n),...
     ', k = ',num2str(k)});
 title(titl)
-legend("(k-1)*t_k^' - 1",'location','north')
+legend("(k-1)*t_k^'-1",'location','north')
 xlabel('number of k-sets in antichain')
 ylabel('volume of antichain')
-
 
 v_i = nCk1*(k-1);
 v_m = min(vol);
@@ -85,9 +83,10 @@ str = {...
 text(0.25,0.7,str,'units','normalized')        
 
 %% output
-% op.vol = vol2;
-% op.marg = A.marg;
-% op.marg_vol = -reshapemaximals(marg_vol2,A.marg);
+op.vol = vol;
+op.marg = marg;
+
 end
 
-antichain_volume(17,9)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+antichain_volume(12,7);
