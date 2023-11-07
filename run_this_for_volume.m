@@ -1,3 +1,6 @@
+%% change the very last line for different n,k
+%% syntax: antichain_volume(n,k)
+
 function op = antichain_volume(n,k)
 % get the volumes of antichains from the k and k-1 level of n
 % each m-set contributes m to the volume
@@ -13,6 +16,12 @@ nCk1 = nchoosek(n,k-1);
 
 %% get marginal volumes from marginal sizes
 M = getmarginals(k,n-k); % returns choose(n-1,d-1)x(k+1) array
+
+
+
+
+
+
 marg = []; % linear container for marginals
 for i = 1:size(M,1)
     marg = [marg,M(i,:)]; %#ok<AGROW> 
