@@ -1,5 +1,5 @@
 %% edit the last line for different n,k
-%% syntax : antichain_volume(n,k)
+%% syntax (matlab/octave): antichain_volume(n,k)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function op = getmarginals(k,d)
