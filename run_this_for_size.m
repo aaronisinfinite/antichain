@@ -1,7 +1,7 @@
 % edit last line for different n,k
 % optionally specify data range to view
-% syntax (matlab/octave): antichain(n,k)
-%                         antichain(n,k,[xmin,xmax,ymin,ymax])
+% syntax (matlab/octave): antichain_size(n,k)
+%                         antichain_size(n,k,[xmin,xmax,ymin,ymax])
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -45,7 +45,7 @@ end
 end
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-function op = antichain(n,k,varargin)
+function op = antichain_size(n,k,varargin)
 % plot size of maximal antichain on n symbols as function of # of k-sets
 
 %% default
@@ -98,4 +98,4 @@ end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-antichain(16,9);
+antichain_size(16,9);
