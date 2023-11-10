@@ -1,5 +1,7 @@
-%% edit the last line for different n,k
-%% syntax (matlab/octave): antichain_volume(n,k)
+% edit the last line for different n,k
+% optionall specify data range to view
+% syntax (matlab/octave): antichain_volume(n,k)
+%                         antichain_volume(n,k,[xmin xmax ymin ymax])
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function op = getmarginals(k,d)
@@ -27,7 +29,7 @@ end
 end
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-function op = antichain_volume(n,k)
+function op = antichain_volume(n,k,varargin)
 % get the volumes of antichains from the k and k-1 level of n
 % each m-set contributes m to the volume
 % nargin = 0;
@@ -65,6 +67,12 @@ title(titl)
 legend("(k-1)*t_k^'-1",'location','north')
 xlabel('number of k-sets in antichain')
 ylabel('volume of antichain')
+
+% display range specified
+if nargin == 3
+lims = varargin{1};
+axis(lims)
+end
 
 v_i = nCk1*(k-1);
 v_m = min(vol);
