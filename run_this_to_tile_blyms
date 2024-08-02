@@ -9,7 +9,7 @@ function op = getmarginals(k,d)
 % get the marginal changes in size of maximal antichain
 % as a result of increasing number of symbols
 
-if d<1
+if d < 1
     warning('d < 1')
     return
 end
