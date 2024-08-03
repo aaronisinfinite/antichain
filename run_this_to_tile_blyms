@@ -73,20 +73,6 @@ for i = 1:length(M)
     sizes(i+1) = sizes(i) - M(i);
 end
 
-%% plot
-%plot(0:length(sizes)-1,sizes,'-o','MarkerSize',2)
-% plot(0:length(sizes)-1,max(sizes)-sizes,'-o','MarkerSize',2)
-
-% display range specified
-if nargin == 3
-lims = varargin{1};
-axis(lims)
-end
-
-%title(strcat('n = ',[' ',num2str(n)],', k = ',[' ',num2str(k)]));
-%ylabel('size of maximal antichains');
-%xlabel('number of k-sets')
-
 %% output
 op.marg = marg;
 op.size = reshapemaximals(sizes,marg);
