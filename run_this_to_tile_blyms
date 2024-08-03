@@ -1,8 +1,10 @@
 % edit last line for different n,k
 % optionally specify data range to view
 % syntax (matlab/octave): tiled_blym(n,list_of_k_values)
-%                         tiled_blym(n,list_of_k_values,[xmin,xmax,ymin,ymax])
-
+%
+% example: tiled_blym(9,3:9)
+%    equivalently: tiled_blym(9,[3,4,5,6,7,8])
+% example: tiled_blym(10,[3,4,6,9])
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function op = getmarginals(k,d)
