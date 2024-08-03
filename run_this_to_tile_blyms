@@ -1,5 +1,4 @@
 % edit last line for different n,k
-% optionally specify data range to view
 % syntax (matlab/octave): tiled_blym(n,list_of_k_values)
 %
 % example: tiled_blym(9,3:9)
