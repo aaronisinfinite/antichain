@@ -86,9 +86,14 @@ function tiled_blym(n,K,varargin)
 % compare blym graphs for fixed n, varied k
 
 numplots = length(K);
-numcols = ceil(numplots/2);
+numrows = ceil(numplots/2);
 plot_ind = 1;
 
+width  = 450; % Width of figure
+height = 150*numrows; % Height of figure (by default in pixels)
+
+figure('Position', [0 0 width height]);
+title('blym graphs for (n,k) = ...')
 %loop over k-values
 for k = K %
 
@@ -109,9 +114,10 @@ p1 = numk1/nCk1;
 p = p0 + p1;
 
 % plot
-subplot(numcols,2,plot_ind);
+subplot(numrows,2,plot_ind);
 str = strcat('n = ',[' ',num2str(n)],', k = ',[' ',num2str(k)]);
 plot(p,'k')
+xlim([0, nCk0])
 text(ceil(nCk0/4), .94, str)
 
 plot_ind = plot_ind + 1;
